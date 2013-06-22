@@ -36,7 +36,9 @@ for numb in f:
     	last = paras[-1].contents[0]
     except: continue
 
-    h = codecs.open('speeches/' + str(first).strip(), encoding='utf=8', mode='w+')
+    file_name = 'speeches/' + str(first).strip().replace('\\','-').replace('/','-')[:100]
+
+    h = codecs.open(file_name, encoding='utf=8', mode='w+')
 
     h.write("%s\n\n%s\n\n%s\n\n%s\n\n%s" % (first, second, start, middle, last))
     print 'Written: ' + str(first) #Just print the title so you can see what's going down. 
